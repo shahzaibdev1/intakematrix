@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Geist } from "next/font/google";
+import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geist = Geist({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const materialSymbols = MaterialSymbolsOutlined({
+//   subsets: ["latin"],
+//   weight: "400",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +24,40 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${geist.className}`}>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="bg-background text-on-surface antialiased font-body selection:bg-primary-container selection:text-on-primary-container">
+        {children}
+        
+      {/* <!-- Footer --> */}
+      <footer className="bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline-variant w-full">
+        <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12 max-w-7xl mx-auto w-full gap-4">
+          <div className="text-lg font-headline font-bold text-on-surface dark:text-on-surface">IntakeMatrix</div>
+          <div className="font-body text-label-sm text-on-surface-variant dark:text-on-surface-variant">
+            © {new Date().getFullYear()} IntakeMatrix. Precision in Automation.
+          </div>
+          <div className="flex items-center gap-6 font-body text-label-sm">
+            <Link
+              className="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors opacity-80 hover:opacity-100"
+              href="/privacy-policy"
+            >
+              Privacy
+            </Link>
+            <Link
+              className="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors opacity-80 hover:opacity-100"
+              href="/terms"
+            >
+              Terms
+            </Link>
+          </div>
+        </div>
+      </footer>
+      </body>
     </html>
   );
 }

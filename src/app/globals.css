@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-background: #09090b;
+  --color-surface: #0c0c0f;
+  --color-surface-container: #121215;
+  --color-surface-container-low: #0f0f12;
+  --color-surface-container-lowest: #09090b;
+  --color-surface-variant: #18181b;
+  
+  --color-primary: #a78bfa;
+  --color-on-primary: #0a0012;
+  --color-primary-container: #7c3aed;
+  --color-on-primary-container: #ede9fe;
+  
+  --color-secondary: #71717a;
+  --color-secondary-fixed: #a1a1aa;
+  
+  --color-tertiary: #34d399;
+  --color-tertiary-container: #065f46;
+  --color-on-tertiary-container: #bbf7d0;
+  
+  --color-error: #ef4444;
+  --color-error-container: #3b1111;
+  
+  --color-outline: #52525b;
+  --color-outline-variant: #27272a;
+  
+  --color-on-surface: #fafafa;
+  --color-on-surface-variant: #a1a1aa;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-on-surface antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.text-glow {
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+}
+
+.glass-panel {
+  background: rgba(18, 18, 21, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-outline-variant);
+}
+
+* {
+  scroll-behavior: smooth;
 }
