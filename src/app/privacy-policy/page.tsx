@@ -3,35 +3,7 @@ import React from "react";
 const PrivacyPolicy = () => {
   return (
     <>
-      {/* <!-- Header / TopAppBar --> */}
-      <header className="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
-        <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto w-full">
-          <div className="text-xl font-headline font-bold tracking-tighter text-on-surface">IntakeMatrix</div>
-          <nav className="hidden md:flex items-center gap-6">
-            <a
-              className="text-on-surface-variant hover:text-primary transition-colors duration-200 font-medium"
-              href="#"
-            >
-              Features
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-primary transition-colors duration-200 font-medium"
-              href="#"
-            >
-              ROI
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-primary transition-colors duration-200 font-medium"
-              href="#"
-            >
-              Pricing
-            </a>
-          </nav>
-          <button className="bg-primary text-on-primary px-4 py-2 rounded font-medium hover:bg-primary-fixed transition-colors duration-200 active:scale-95">
-            Start Trial
-          </button>
-        </div>
-      </header>
+      
       {/* <!-- Main Content --> */}
       <main className="grow max-w-7xl mx-auto w-full px-6 py-16 grid grid-cols-1 lg:grid-cols-4 gap-12">
         {/* <!-- Sidebar Navigation --> */}
