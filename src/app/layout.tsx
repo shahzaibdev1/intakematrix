@@ -3,6 +3,7 @@ import "./globals.css";
 import { Geist } from "next/font/google";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
+import Image from "next/image";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -40,7 +41,10 @@ export default function RootLayout({
         {/* <!-- Footer --> */}
         <footer className="bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline-variant w-full">
           <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12 max-w-7xl mx-auto w-full gap-4">
-            <div className="text-lg font-headline font-bold text-on-surface dark:text-on-surface">IntakeMatrix</div>
+            <div className="flex items-center gap-2 text-lg font-headline font-bold text-on-surface dark:text-on-surface">
+              <Image src="/logo.png" alt="IntakeMatrix Logo" width={40} height={40} />
+              <span> IntakeMatrix</span>{" "}
+            </div>
             <div className="font-body text-label-sm text-on-surface-variant dark:text-on-surface-variant">
               © {new Date().getFullYear()} IntakeMatrix. Precision in Automation.
             </div>

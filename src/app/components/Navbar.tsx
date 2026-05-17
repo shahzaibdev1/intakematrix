@@ -1,16 +1,19 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const router = useRouter();
   const goToAccess = () => router.push("/request-access");
+  const goToHome = () => router.push("/");
 
   return (
     <nav className="bg-surface/80 backdrop-blur-md sticky top-0 w-full z-50 border-b border-outline-variant dark:border-outline-variant">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto w-full">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2" onClick={goToHome} style={{ cursor: "pointer" }}>
+          <Image src="/logo.png" alt="IntakeMatrix Logo" width={40} height={40} />
           <span className="text-xl font-headline font-bold tracking-tighter text-on-surface dark:text-on-surface">
             IntakeMatrix
           </span>
