@@ -16,6 +16,8 @@
   --color-on-primary: #0a0012;
   --color-primary-container: #7c3aed;
   --color-on-primary-container: #ede9fe;
+  --color-primary-fixed-dim: #c4b5fd;
+  --color-primary-fixed: #ede9fe;
   
   --color-secondary: #71717a;
   --color-secondary-fixed: #a1a1aa;
@@ -49,7 +51,6 @@
   background: rgba(18, 18, 21, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--color-outline-variant);
 }
 
 * {
