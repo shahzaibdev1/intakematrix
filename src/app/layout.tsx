@@ -4,6 +4,7 @@ import { Geist } from "next/font/google";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
